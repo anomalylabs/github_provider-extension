@@ -2,20 +2,23 @@
 
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
+/**
+ * Class GithubProviderExtensionExtension
+ *
+ * @link          http://anomaly.is/streams-platform
+ * @author        AnomalyLabs, Inc. <hello@anomaly.is>
+ * @author        Ryan Thompson <ryan@anomaly.is>
+ * @package       Anomaly\GithubProviderExtensionExtension
+ */
 class GithubProviderExtensionExtension extends Extension
 {
 
     /**
-     * This extension provides...
-     *
-     * This should contain the dot namespace
-     * of the addon this extension is for followed
-     * by the purpose.variation of the extension.
-     *
-     * For example anomaly.module.store::gateway.stripe
+     * This extension provides the github
+     * oauth provider for the API module.
      *
      * @var null|string
      */
-    protected $provides = null;
+    protected $provides = 'anomaly.module.api.oauth_provider.github';
 
 }

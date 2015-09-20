@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Github Provider',
+    'title'       => 'Github',
     'name'        => 'Github Provider Extension',
     'description' => ''
 ];

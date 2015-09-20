@@ -1,16 +1,16 @@
-<?php namespace Anomaly\GithubProviderExtensionExtension;
+<?php namespace Anomaly\GithubProviderExtension;
 
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
 /**
- * Class GithubProviderExtensionExtension
+ * Class GithubProviderExtension
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\GithubProviderExtensionExtension
+ * @package       Anomaly\GithubProviderExtension
  */
-class GithubProviderExtensionExtension extends Extension
+class GithubProviderExtension extends Extension
 {
 
     /**
@@ -19,6 +19,6 @@ class GithubProviderExtensionExtension extends Extension
      *
      * @var null|string
      */
-    protected $provides = 'anomaly.module.api.oauth_provider.github';
+    protected $provides = 'anomaly.module.api::oauth_provider.github';
 
 }

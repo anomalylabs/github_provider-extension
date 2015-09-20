@@ -1,9 +1,9 @@
 {
-    "name": "anomaly/github_provider-extension-extension",
+    "name": "anomaly/github_provider-extension",
     "type": "streams-addon",
     "autoload": {
         "psr-4": {
-            "Anomaly\\GithubProviderExtensionExtension\\": "src/"
+            "Anomaly\\GithubProviderExtension\\": "src/"
         }
     },
     "require": {

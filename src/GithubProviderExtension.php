@@ -22,7 +22,7 @@ class GithubProviderExtension extends Extension implements ProviderExtensionInte
      * This extension provides the github
      * oauth provider for the API module.
      *
-     * @var null|string
+     * @var string
      */
     protected $provides = 'anomaly.module.api::oauth_provider.github';
 

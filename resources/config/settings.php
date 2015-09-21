@@ -5,7 +5,7 @@ return [
     'client_secret' => 'anomaly.field_type.encrypted',
     'redirect_uri'  => 'anomaly.field_type.url',
     'scope'         => [
-        'type'   => 'anomaly.field_type.checkboxes',
+        'type'   => 'anomaly.field_type.tags',
         'config' => [
             'options' => [
                 'user',

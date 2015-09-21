@@ -528,7 +528,7 @@ abstract class AbstractProvider
         $params = [
             'client_id'     => $this->clientId,
             'client_secret' => $this->clientSecret,
-            'redirect_uri'  => $this->redirectUri,
+            'redirect_uri'  => 'http://workbench.local:8888/admin/api/providers/tokens/anomaly.extension.streams_platform_provider',
         ];
 
         $params   = $grant->prepareRequestParameters($params, $options);
@@ -705,7 +705,7 @@ abstract class AbstractProvider
      * @param  mixed $result
      * @return array
      */
-    protected function prepareAccessTokenResponse(array $result)
+    protected function prepareAccessTokenResponse($result)
     {
         if ($this->getAccessTokenResourceOwnerId() !== null) {
             $result['resource_owner_id'] = $this->getValueByKey(

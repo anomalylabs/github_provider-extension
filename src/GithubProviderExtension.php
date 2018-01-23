@@ -3,7 +3,7 @@
 use Anomaly\ApiModule\Provider\Contract\ProviderExtensionInterface;
 use Anomaly\GithubProviderExtension\Command\MakeGitHubAccessToken;
 use Anomaly\GithubProviderExtension\Command\MakeGitHubProvider;
-use Anomaly\Streams\Platform\Addon\Extension\Extension;
+use Anomaly\SocialModule\Provider\ProviderExtension;
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Token\AccessToken;
 
@@ -15,7 +15,7 @@ use League\OAuth2\Client\Token\AccessToken;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\GithubProviderExtension
  */
-class GithubProviderExtension extends Extension implements ProviderExtensionInterface
+class GithubProviderExtension extends ProviderExtension
 {
 
     /**

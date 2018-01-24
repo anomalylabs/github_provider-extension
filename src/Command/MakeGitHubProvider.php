@@ -1,41 +1,36 @@
 <?php namespace Anomaly\GithubProviderExtension\Command;
 
-use Anomaly\EncryptedFieldType\EncryptedFieldTypePresenter;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Http\Request;
+use Anomaly\Streams\Platform\Routing\UrlGenerator;
+use Illuminate\Contracts\Config\Repository;
 use League\OAuth2\Client\Provider\Github;
 
 /**
  * Class MakeGitHubProvider
  *
- * @link          http://anomaly.is/streams-platform
- * @author        AnomalyLabs, Inc. <hello@anomaly.is>
- * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\GithubProviderExtension\Command
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class MakeGitHubProvider implements SelfHandling
+class MakeGitHubProvider
 {
 
     /**
      * Handle the command.
      *
-     * @param SettingRepositoryInterface $settings
-     * @param Request                    $request
+     * @param Repository   $config
+     * @param UrlGenerator $url
      * @return Github
      */
-    public function handle(SettingRepositoryInterface $settings, Request $request)
+    public function handle(Repository $config, UrlGenerator $url)
     {
-        /* @var EncryptedFieldTypePresenter $clientId */
-        /* @var EncryptedFieldTypePresenter $clientSecret */
-        $clientId     = $settings->value('anomaly.extension.github_provider::client_id');
-        $clientSecret = $settings->value('anomaly.extension.github_provider::client_secret');
+        $id     = $config->get('services.github.client_id');
+        $secret = $config->get('services.github.client_secret');
 
         return new Github(
             [
-                'clientId'     => $clientId->decrypted(),
-                'clientSecret' => $clientSecret->decrypted(),
-                'redirectUri'  => $request->fullUrl(),
+                'clientId'     => $id,
+                'clientSecret' => $secret,
+                'redirectUri'  => $url->to('social/github/login'),
             ]
         );
     }

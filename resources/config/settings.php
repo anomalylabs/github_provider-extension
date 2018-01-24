@@ -1,9 +1,16 @@
 <?php
 
 return [
-    'client_id'     => 'anomaly.field_type.encrypted',
-    'client_secret' => 'anomaly.field_type.encrypted',
-    'redirect_uri'  => 'anomaly.field_type.url',
+    'client_id'     => [
+        'env'  => 'GITHUB_CLIENT_ID',
+        'bind' => 'services.github.client_id',
+        'type' => 'anomaly.field_type.encrypted',
+    ],
+    'client_secret' => [
+        'env'  => 'GITHUB_CLIENT_SECRET',
+        'bind' => 'services.github.client_secret',
+        'type' => 'anomaly.field_type.encrypted',
+    ],
     'scope'         => [
         'type'   => 'anomaly.field_type.tags',
         'config' => [
@@ -27,8 +34,8 @@ return [
                 'admin:org',
                 'read:public_key',
                 'write:public_key',
-                'admin:public_key'
-            ]
-        ]
-    ]
+                'admin:public_key',
+            ],
+        ],
+    ],
 ];

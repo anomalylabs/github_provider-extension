@@ -1,36 +1,34 @@
 <?php namespace Anomaly\GithubProviderExtension\Command;
 
-use Anomaly\EncryptedFieldType\EncryptedFieldTypePresenter;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Contracts\Config\Repository;
 use League\OAuth2\Client\Token\AccessToken;
 
 /**
+ * /**
  * Class MakeGitHubAccessToken
  *
- * @link          http://anomaly.is/streams-platform
- * @author        AnomalyLabs, Inc. <hello@anomaly.is>
- * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\GithubProviderExtension\Command
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class MakeGitHubAccessToken implements SelfHandling
+class MakeGitHubAccessToken
 {
 
     /**
      * Handle the command.
      *
-     * @param SettingRepositoryInterface $settings
+     * @param Repository $config
      * @return AccessToken
+     * @throws \Exception
      */
-    public function handle(SettingRepositoryInterface $settings)
+    public function handle(Repository $config)
     {
-        /* @var EncryptedFieldTypePresenter $setting */
-        $setting = $settings->value('anomaly.extension.github_provider::access_token');
+        $token = $config->get('services.github.token');
 
-        if (!$setting) {
+        if (!$token) {
             throw new \Exception('Please generate tokens for the GitHub provider first.');
         }
 
-        return new AccessToken(['access_token' => $setting->decrypted()]);
+        return new AccessToken(['access_token' => $token]);
     }
 }

@@ -24,7 +24,7 @@ class GithubProviderExtension extends ProviderExtension
      *
      * @var string
      */
-    protected $provides = 'anomaly.module.api::oauth_provider.github';
+    protected $provides = 'anomaly.module.social::provider.github';
 
     /**
      * Return a provider instance.

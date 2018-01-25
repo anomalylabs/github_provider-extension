@@ -1,6 +1,5 @@
 <?php namespace Anomaly\GithubProviderExtension\Command;
 
-use Anomaly\Streams\Platform\Routing\UrlGenerator;
 use Illuminate\Contracts\Config\Repository;
 use League\OAuth2\Client\Provider\Github;
 
@@ -17,20 +16,20 @@ class MakeGitHubProvider
     /**
      * Handle the command.
      *
-     * @param Repository   $config
-     * @param UrlGenerator $url
+     * @param Repository $config
      * @return Github
      */
-    public function handle(Repository $config, UrlGenerator $url)
+    public function handle(Repository $config)
     {
-        $id     = $config->get('services.github.client_id');
-        $secret = $config->get('services.github.client_secret');
+        $id       = $config->get('services.github.client_id');
+        $secret   = $config->get('services.github.client_secret');
+        $redirect = $config->get('services.github.redirect');
 
         return new Github(
             [
                 'clientId'     => $id,
                 'clientSecret' => $secret,
-                'redirectUri'  => $url->to('social/github/login'),
+                'redirectUri'  => $redirect,
             ]
         );
     }

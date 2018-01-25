@@ -43,6 +43,6 @@ class GithubProviderExtension extends ProviderExtension
      */
     public function token()
     {
-        return $this->dispatch(new MakeGitHubAccessToken());
+        return $this->dispatch(new MakeGitHubAccessToken($this));
     }
 }

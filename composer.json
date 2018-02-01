@@ -27,6 +27,7 @@
     },
     "require": {
         "league/oauth2-github": "^2.0.0",
+        "anomaly/social-module": "^1.0",
         "anomaly/streams-platform": "^1.2"
     },
     "autoload": {

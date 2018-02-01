@@ -1,11 +1,10 @@
 {
     "name": "anomaly/github_provider-extension",
     "type": "streams-addon",
-    "description": "A simple text input field type.",
+    "description": "A github authentication provider for the Social module.",
     "keywords": [
-        "streams field type",
         "streams addon",
-        "field type"
+        "social"
     ],
     "homepage": "http://pyrocms.com/",
     "license": "MIT",

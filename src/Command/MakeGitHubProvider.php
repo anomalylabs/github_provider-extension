@@ -24,12 +24,14 @@ class MakeGitHubProvider
         $id       = $config->get('services.github.client_id');
         $secret   = $config->get('services.github.client_secret');
         $redirect = $config->get('services.github.redirect');
+        $scope    = $config->get('services.github.scope');
 
         return new Github(
             [
                 'clientId'     => $id,
                 'clientSecret' => $secret,
                 'redirectUri'  => $redirect,
+                'scope'        => $scope,
             ]
         );
     }

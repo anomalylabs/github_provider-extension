@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Github',
-    'name'        => 'Github Provider Extension',
-    'description' => ''
+    'title'       => 'GitHub',
+    'name'        => 'GitHub Provider Extension',
+    'description' => 'A GitHub authentication provider for the Social module.',
 ];

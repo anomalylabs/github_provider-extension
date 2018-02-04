@@ -1,9 +1,7 @@
 <?php namespace Anomaly\GithubProviderExtension;
 
 use Anomaly\GithubProviderExtension\Command\MakeGitHubAccessToken;
-use Anomaly\GithubProviderExtension\Command\MakeGitHubProvider;
 use Anomaly\SocialModule\Provider\ProviderExtension;
-use League\OAuth2\Client\Provider\AbstractProvider;
 
 /**
  * Class GithubProviderExtension
@@ -24,13 +22,4 @@ class GithubProviderExtension extends ProviderExtension
      */
     protected $provides = 'anomaly.module.social::provider.github';
 
-    /**
-     * Return a provider instance.
-     *
-     * @return AbstractProvider
-     */
-    public function make()
-    {
-        return $this->dispatch(new MakeGitHubProvider());
-    }
 }

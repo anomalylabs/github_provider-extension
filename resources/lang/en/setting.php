@@ -7,7 +7,12 @@ return [
     'client_secret' => [
         'name' => 'Client Secret',
     ],
-    'scope'         => [
-        'name' => 'Scope',
+    'scope'             => [
+        'name'         => 'Scopes',
+        'instructions' => 'Specify the <a href="https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/#available-scopes" target="_blank">user scopes</a> for Facebook.',
+    ],
+    'application_scope' => [
+        'name'         => 'Application Scopes',
+        'instructions' => 'Specify the <a href="https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/#available-scopes" target="_blank">application scopes</a> for Facebook.',
     ],
 ];

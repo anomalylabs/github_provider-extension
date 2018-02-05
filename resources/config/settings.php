@@ -2,14 +2,16 @@
 
 return [
     'client_id'         => [
-        'env'  => 'GITHUB_CLIENT_ID',
-        'bind' => 'services.github.client_id',
-        'type' => 'anomaly.field_type.encrypted',
+        'required' => true,
+        'env'      => 'GITHUB_CLIENT_ID',
+        'bind'     => 'services.github.client_id',
+        'type'     => 'anomaly.field_type.encrypted',
     ],
     'client_secret'     => [
-        'env'  => 'GITHUB_CLIENT_SECRET',
-        'bind' => 'services.github.client_secret',
-        'type' => 'anomaly.field_type.encrypted',
+        'required' => true,
+        'env'      => 'GITHUB_CLIENT_SECRET',
+        'bind'     => 'services.github.client_secret',
+        'type'     => 'anomaly.field_type.encrypted',
     ],
     'scope'             => [
         'bind'   => 'services.github.scope',
